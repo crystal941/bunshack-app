@@ -19,6 +19,14 @@ const Footer: React.FC = () => {
     window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
 
+  const handleInstagramClick = () => {
+    window.open("https://www.instagram.com/bunshack/?hl=en", "_blank");
+  };
+
+  const handleXClick = () => {
+    window.open("https://x.com/", "_blank");
+  };
+
   return (
     <>
       <Box
@@ -35,8 +43,8 @@ const Footer: React.FC = () => {
             },
           }}
         >
-          <InstagramIcon />
-          <XIcon />
+          <InstagramIcon onClick={handleInstagramClick} />
+          <XIcon onClick={handleXClick} />
           <GoogleIcon onClick={handleGoogleClick} />
           <ShareIcon onClick={handleShareClick} />
         </Box>
