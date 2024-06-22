@@ -4,8 +4,20 @@ import GoogleIcon from "@mui/icons-material/Google";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
 import ShareIcon from "@mui/icons-material/Share";
+import { encode } from "punycode";
 
 const Footer: React.FC = () => {
+
+  const handleGoogleClick = () => {
+    window.open("https://maps.app.goo.gl/TnNeeNeMV46hNAj87", "_blank");
+  }
+
+  const handleShareClick = () => {
+    const subject = encode("Check out BunShack Breakfast");
+    const body = encode("I found this amazing breakfast place called BunShack Breakfast. You should check it out!");
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  }
+
   return (
     <>
       <Box
@@ -24,8 +36,8 @@ const Footer: React.FC = () => {
         >
           <InstagramIcon />
           <XIcon />
-          <GoogleIcon />
-          <ShareIcon />
+          <GoogleIcon onClick={handleGoogleClick} />
+          <ShareIcon onClick={handleShareClick} />
         </Box>
         <Typography
           variant="h6"
