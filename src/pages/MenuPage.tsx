@@ -14,8 +14,8 @@ const MenuPage: React.FC = () => {
   return (
     <Layout>
       <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-        {MenuList.map((menu) => (
-          <Card sx={{ maxWidth: "390px", display: "flex", m: 2 }}>
+        {MenuList.map((menu, id) => (
+          <Card key={id} sx={{ maxWidth: "390px", display: "flex", m: 2 }}>
             <CardActionArea>
               <CardMedia
                 sx={{ minHeight: "400px" }}
