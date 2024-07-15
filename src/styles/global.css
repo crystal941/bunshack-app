@@ -12,9 +12,9 @@ code {
     monospace;
 }
 
-.content-wrapper {
+/* .content-wrapper {
   background-color: black;
-}
+} */
 
 .content {
   text-align: center;
@@ -29,14 +29,14 @@ code {
   font-weight: bold;
   margin: 3rem 0;
   font-size: 2rem;
-  color: white;
+  /* color: white; */
 }
 
 .content p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 3rem;
-  color: white;
+  /* color: white; */
 }
 
 .content img {
