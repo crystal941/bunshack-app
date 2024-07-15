@@ -1,15 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+//import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './styles/global.css';
+import { BrowserRouter } from 'react-router-dom';
+import ThemeContextProvider from './ThemeContextProvider';
+
+/***
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+ */
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <ThemeContextProvider>
+      <App />
+    </ThemeContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

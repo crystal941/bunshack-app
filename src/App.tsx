@@ -1,7 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import AppRoutes from './routes';
+//import Navbar from './components/Navbar';
 import './App.css';
+//import Footer from './components/Footer';
 
+const App: React.FC = () => {
+  return (
+    <div>
+
+      <AppRoutes />
+
+    </div>
+  );
+}
+
+/*** 
 function App() {
   return (
     <div className="App">
@@ -22,5 +35,5 @@ function App() {
     </div>
   );
 }
-
+*/
 export default App;

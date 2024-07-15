@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// src/components/Navbar.tsx
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   AppBar,
   Box,
@@ -8,29 +9,30 @@ import {
   IconButton,
   Toolbar,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-import SoupKitchenIcon from "@mui/icons-material/SoupKitchen";
-import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SoupKitchenIcon from '@mui/icons-material/SoupKitchen';
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ThemeToggleButton from './ThemeToggleButton';
 
-import "../styles/Navbar.css";
+import '../styles/Navbar.css';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  //handle menu click
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  //menu drawer
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography
-        color={"goldenrod"}
+        color={'goldenrod'}
         variant="h6"
         component="div"
         sx={{ flexGrow: 1, my: 2 }}
@@ -73,22 +75,23 @@ const Navbar: React.FC = () => {
       </ul>
     </Box>
   );
+
   return (
     <>
       <Box>
-        <AppBar component={"nav"} sx={{ bgcolor: "#1A1A19" }}>
+        <AppBar component={'nav'} sx={{ bgcolor: '#1A1A19' }}>
           <Toolbar>
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
-              sx={{ mr: 2, display: { sm: "none" } }}
+              sx={{ mr: 2, display: { sm: 'none' } }}
               onClick={handleDrawerToggle}
             >
               <MenuIcon />
             </IconButton>
             <Typography
-              color={"goldenrod"}
+              color={'goldenrod'}
               variant="h6"
               component="div"
               sx={{ flexGrow: 1 }}
@@ -96,7 +99,7 @@ const Navbar: React.FC = () => {
               <SoupKitchenIcon />
               BunShack Breakfast
             </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               <ul className="navigation-menu">
                 <li>
                   <Link to="/">Home</Link>
@@ -115,6 +118,7 @@ const Navbar: React.FC = () => {
                 </li>
               </ul>
             </Box>
+            <ThemeToggleButton />
           </Toolbar>
         </AppBar>
         <Box component="nav">
@@ -123,10 +127,10 @@ const Navbar: React.FC = () => {
             open={mobileOpen}
             onClose={handleDrawerToggle}
             sx={{
-              display: { xs: "block", sm: "none" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: "240px",
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
+                width: '240px',
               },
             }}
           >
